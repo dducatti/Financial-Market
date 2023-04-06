@@ -1,0 +1,13 @@
+## Traders Equation - Risk and Reward ##
+
+tick = float(input('Tick Size (U$): '))
+risk = float(input('Stop Loss (ticks): '))
+reward = float(input('Take Profit (ticks): '))
+losingtrade = 10
+winningtrade = 0
+while losingtrade >= 0:
+    netprofit = reward * winningtrade - risk * losingtrade
+    netprofit = netprofit * tick
+    print('{:3}% of Winning Trades -> U${:.2f} '.format(winningtrade * 10, netprofit))
+    losingtrade -= 1
+    winningtrade += 1
