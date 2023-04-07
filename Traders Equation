@@ -1,13 +1,15 @@
-## Traders Equation - Risk and Reward ##
+## Calculator - Risk and Reward ##
 
 tick = float(input('Tick Size (U$): '))
 risk = float(input('Stop Loss (ticks): '))
 reward = float(input('Take Profit (ticks): '))
-losingtrade = 10
-winningtrade = 0
+losingtrade = 10        #number of losing trades
+winningtrade = 0        #number of winning trades
 while losingtrade >= 0:
-    netprofit = reward * winningtrade - risk * losingtrade
+    netprofit = reward * winningtrade - risk * losingtrade      #traders equation
     netprofit = netprofit * tick
     print('{:3}% of Winning Trades -> U${:.2f} '.format(winningtrade * 10, netprofit))
     losingtrade -= 1
     winningtrade += 1
+print('------------------------------------')
+print('Breakeven -> ')                       #breakeven - a percentual of winning trades that the risk/reward = U$0.00
